@@ -1,0 +1,11 @@
+python train.py --data dataset/data.yaml --batch 36 --epoch 20 --model yolo_nas_m
+
+
+python inference.py --num 9 --model yolo_nas_m --weight /runs/train4/ckpt_best.pth --source /test/video.mp4 --conf 0.66           # video
+                                                                                    --source /test/sample.jpg --conf 0.5 --save    # Image save
+                                                                                    --source /test/video.mp4 --conf 0.75 --hide    # to save and hide video window
+                                                                                    --source 0 --conf 0.45                         # Camera
+                                                                                    --source 'rtsp://link' --conf 0.25 --save      # save RTSP video stream
+
+python inference.py --num 9 --model yolo_nas_m --weight runs/train0/ckpt_best.pth --source dataset/test/images/006726_png.rf.86449dcb6d67ebd3503dcde3ad9c7a20.jpg --conf 0.65 --save
+
